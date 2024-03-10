@@ -1,12 +1,8 @@
 import { MessageCircle } from "lucide-react"
-import { ChatUser } from ".."
+import { useAppSelector } from "../../../app/hooks"
 
-type ChatWindowProps = {
-  currentChat: ChatUser | null
-}
-
-const ChatWindow: React.FC<ChatWindowProps> = (props: ChatWindowProps) => {
-  const { currentChat } = props
+const ChatWindow: React.FC = () => {
+  const currentChat = useAppSelector((state) => state.chat.currentChat)
 
   const chatJSX = (
     <section className='flex flex-col h-full'>

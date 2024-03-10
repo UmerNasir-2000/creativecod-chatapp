@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useChatUsers } from "../../features/users/hooks"
+import ChatTabs from "./chatTabs"
 import ChatWindow from "./chatWindow"
 
 export interface ChatUser {
@@ -15,16 +16,16 @@ export interface ChatUser {
 }
 
 const Chat: React.FC = () => {
-  const [currentChat, setCurrentChat] = useState<ChatUser | null>(null)
+  useChatUsers()
 
   return (
     <div className='my-10 mt-14'>
       <div className='grid grid-cols-4 max-w-[1400px] mx-auto h-[950px]'>
         <div className='hidden bg-zinc-300 col-span-1 rounded-tl-xl rounded-bl-xl shadow-xl md:block dark:bg-slate-800'>
-          {/* <ChatTabs currentChat={currentChat} setCurrentChat={setCurrentChat} /> */}
+          <ChatTabs />
         </div>
         <div className='bg-zinc-100 col-span-3 rounded-tr-xl rounded-br-xl shadow-xl dark:bg-gray-900'>
-          <ChatWindow currentChat={currentChat} />
+          <ChatWindow />
         </div>
       </div>
     </div>
