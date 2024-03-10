@@ -36,7 +36,7 @@ export const usersSlice = createSlice({
       state.users = action.payload
       state.loading = false
     })
-    builder.addCase(fetchChatUsers.rejected, (state, action) => {
+    builder.addCase(fetchChatUsers.rejected, (state) => {
       state.users = []
       state.loading = false
     })

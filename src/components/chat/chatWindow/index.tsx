@@ -1,14 +1,17 @@
 import { MessageCircle } from "lucide-react"
 import { useAppSelector } from "../../../app/hooks"
+import ChatHeader from "../chatHeader"
+import MessageList from "../messageList"
+import ChatMessageInput from "../chatMessageInput"
 
 const ChatWindow: React.FC = () => {
   const currentChat = useAppSelector((state) => state.chat.currentChat)
 
   const chatJSX = (
     <section className='flex flex-col h-full'>
-      {/* <ChatHeader currentChat={currentChat!} />
-      <MessageList messages={messages} />
-      <ChatMessageInput currentChat={currentChat!} setMessages={setMessages} /> */}
+      <ChatHeader />
+      <MessageList />
+      <ChatMessageInput />
     </section>
   )
 
